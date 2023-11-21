@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facultad de ingenierias</title>
+    <!-- CEO: como entcontrar el sitio web  -->
+    <meta name="description" content="Pagina web dde Facultad de Ingenierias">
+    <!-- Prefetch -->
+    <!-- Asegurarse a que siguiente pagina usualmente el usuario entra, Google analytics -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-9Zk+irZUWcQ/Ig1q8I9e3zmA/2JGszPzWIpP7PVCHmHTv9u7sfuglXuyzotO+U8DJM8ThMF/7a5P63nGfcUPuw=="
+        crossorigin="anonymous" />
+    <!-- Preload normalize -->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Fuentes  -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+        crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Preload css -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <div id="menu">
+        <a href="#quito"><i class="fas fa-arrow-right"></i>Quito</a>
+        <a href="#guayaquil"><i class="fas fa-arrow-right"></i>Guayaquil</a>
+        <a href="#machala"><i class="fas fa-arrow-right"></i>Machala</a>
+
+    </div>
+    <header class="header">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <div>
+                        <h2 class="logo__nombre no-margin centrar-texto">UMET|<span class="logo__bold">Univeridad
+                                Metropolitana</span></h2>
+                    </div>
+
+
+                </a>
+                <nav class="navegacion">
+                    <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+            </div>
+        </div>
+        <div class="header__texto">
+            <h1 class="no-margin">Facultad de Ingenierias</h1>
+        </div>
+    </header>
+    <div class="centrar__contenido">
+        <h1 class="centrar-texto" style="color:#009aa6">
+            <strong><em>UNIVERSIDAD METROPOLITANA</em></strong></h1>
+        <h2 class="no-bold centrar-texto" style="color:#009aa6">CARRERAS Y PROGRAMAS FING</h2>
+        <p class="justificar-texto"><strong>La UMET</strong>&nbsp;es una institución con Matriz en la ciudad de
+            Guayaquil y sedes en las ciudades de Quito y Machala, contando con oferta para estudios de nivel técnico y
+            tecnológico superior, grado, posgrado y educación continua, en varias modalidades
+            incluyendo&nbsp;<strong>estudios en línea,&nbsp;</strong>por lo cual, nuestros estudiantes pueden acceder a
+            oportunidades académicas desde cualquier parte del Ecuador y del mundo.</p>
+    </div>
+
+
+    <div class="contenedor contenido-principal">
+        <main class="blog">
+
+            <article id="quito" class="entrada centrar__contenido">
+                <p class="titulosSedes">Sede quito</p>
+                <h4 class="titulosCarreras">Carreras de tercer nivel de grado</h4>
+                <div class="centrar-texto">
+                    <a class="boton boton--primario no-margin no-padding"
+                        href="ISQuito.html">Ingeniería en Sistemas de la Información
+                    </a>
+                    <a class="boton boton--primario" href="ILTQuito.html">Ingeniería en
+                        Logistica y Transporte
+                    </a>
+                </div>
+                <h4 class="titulosCarreras">Carreras de tercer nivel de grado</h4>
+                <div class="centrar-texto">
+                    <a class="boton boton--primario no-margin no-padding"
+                        href="TSSQuito.html">Tecnologia Superior en Desarrollo de
+                        Software
+                    </a>
+                </div>
+                <h4 class="titulosCarreras">Posgrado</h4>
+                <div class="centrar-texto">
+                    <a class="boton boton--primario no-margin no-padding"
+                        href="MSQuito.html"> Maestria en Sistemas de Informacion con
+                        mencion en Inteligencia de Negocio
+                    </a>
+                </div>
+                <div class="map" id="map"></div>
+                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                <script>
+                    // Coordenadas del lugar
+                    var myLatLng = {
+
+                        lat: -0.20130127679164336,
+                        lng: -78.48375344998854
+                    }; // Por ejemplo, coordenadas de Nueva York
+
+                    // Crear un mapa
+                    var map = L.map('map').setView(myLatLng, 15); // Nivel de zoom: 13
+
+                    // Añadir un mapa de OpenStreetMap
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors'
+                    }).addTo(map);
+
+                    // Añadir un marcador
+                    L.marker(myLatLng).addTo(map)
+                        .bindPopup('UNIVERSIDAD METROPOLITANA')
+                        .openPopup();
+                </script>
+
+            </article>
+            <article id="guayaquil" class="entrada centrar__contenido">
+                <p class="titulosSedes">Sede Guayaquil</p>
+                <h4 class="titulosCarreras">Carreras de tercer nivel de grado</h4>
+                <div class="centrar-texto">
+                    <a class="boton boton--primario no-margin no-padding"
+                        href="ISGuayaquil.html">Ingeniería en Sistemas de la Información
+                    </a>
+                    <a class="boton boton--primario" href="ILTGuayaquil.html">Ingeniería en Logistica y Transporte
+                    </a>
+                </div>
+                <h4 class="titulosCarreras">Carreras Tecnologicas</h4>
+                <div class="centrar-texto">
+                    <a class="boton boton--primario no-margin no-padding"
+                        href="TSSGuayaquil.html">Tecnologia Superior en Big Data e Inteligencia de Negocio
+                    </a>
+                </div>
+                <div class="map" id="map2"></div>
+                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                <script>
+                    // Coordenadas del lugar
+                    var myLatLng = {
+
+                        lat: -2.173527516009306,
+                        lng: -79.90174758062602
+                    }; // Por ejemplo, coordenadas de Nueva York
+
+                    // Crear un mapa
+                    var map = L.map('map2').setView(myLatLng, 17); // Nivel de zoom: 13
+
+                    // Añadir un mapa de OpenStreetMap
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors'
+                    }).addTo(map);
+
+                    // Añadir un marcador
+                    L.marker(myLatLng).addTo(map)
+                        .bindPopup('UMET KENNEDY')
+                        .openPopup();
+                </script>
+
+            </article>
+            <article id="machala" class="entrada centrar__contenido">
+                <p class="titulosSedes">Sede Machala</p>
+                <h4 class="titulosCarreras">Carreras de tercer nivel de grado</h4>
+                <div class="centrar-texto">
+                    <a class="boton boton--primario no-margin no-padding"
+                        href="IAMachala.html">Ingeniería en Agroecologia
+                    </a>
+                    <a class="boton boton--primario" href="ILTMachala.html">Ingeniería en
+                        Logistica y Transporte
+                    </a>
+                </div>
+                <div class="map" id="map3"></div>
+                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                <script>
+                    // Coordenadas del lugar
+                    var myLatLng = {
+                        lat: -3.2814579430346766,
+                        lng: -79.94213495543282
+                    }; // Por ejemplo, coordenadas de Nueva York
+
+                    // Crear un mapa
+                    var map = L.map('map3').setView(myLatLng, 15); // Nivel de zoom: 13
+
+                    // Añadir un mapa de OpenStreetMap
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors'
+                    }).addTo(map);
+
+                    // Añadir un marcador
+                    L.marker(myLatLng).addTo(map)
+                        .bindPopup('UMET PAJONAL')
+                        .openPopup();
+                </script>
+
+            </article>
+        </main>
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="contenedor__footer ">
+
+            <a class="logo" href="index.html">
+                <h1 class="logo__nombre">Facultad de Ingenierias</h1>
+            </a>
+
+            <div class="footer__text">
+                <h3 class="toright">Siguenos.</h3>
+                <p class="toright">En el caso de necesitar soporte de la sede Machala dirigirse a la página web
+                    umetmachala.edu.ec o a
+                    través de 072933123 ext.101.</p>
+            </div>
+            <div class="footer__text">
+                <h3>GUAYAQUIL</h3>
+                Av. Francisco Boloña y 1er callejón No. 519
+                (04) 6038282 – (04) 6026609
+                <h3>QUITO</h3>
+                La Coruña N26-95 y San Ignacio
+                (02) 2221572 – (02) 2527790 – (02) 2546727 – (02) 2553389 – (02) 2229544
+                <h3>MACHALA</h3>
+                Vía al Pajonal
+                (07) 2931123</p>
+            </div>
+            <div class="redes-sociales toright">
+                <!-- Icono de Facebook -->
+                <a href="https://www.facebook.com/umet.edu/" target="_blank" class="icono-red-social">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+
+                <!-- Icono de Instagram -->
+                <a href="https://www.instagram.com/umet_edu/" target="_blank" class="icono-red-social">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+
+                <!-- Icono de WhatsApp -->
+                <a href="https://api.whatsapp.com/send/?phone=593989417278&text&type=phone_number&app_absent=0" target="_blank" class="icono-red-social">
+                    <i class="fab fa-whatsapp-square"></i>
+                </a>
+            </div>
+            <div>
+
+            </div>
+    </footer>
+    <script src="js/modernizr.js"></script>
+    <script src="js/menuFlotante.js"></script>
+</body>
+
+</html>
